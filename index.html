@@ -1,5 +1,6 @@
 <!DOCTYPE html>
- <html lang="ru">
+
+<html lang="ru">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -707,7 +708,10 @@ p{color:var(--text-muted)}
 </div><p style="text-align:center;margin-top:40px">Продолжая использование сайта, вы подтверждаете согласие с действующей редакцией политики.</p></div>
 </div>
 <div class="age-widget" id="ageWidget">
-<button class="age-widget-btn" data-open-age=""> </button>
+<button class="age-widget-btn" data-open-age="">
+<span class="age-widget-icon">18+</span>
+<span class="age-widget-text">Открыть контакты 18+</span>
+</button>
 </div>
 <div class="age-modal" id="ageModal">
 <div class="age-modal-overlay" onclick="closeAgeModal()"></div>
@@ -716,7 +720,10 @@ p{color:var(--text-muted)}
 <div class="age-modal-icon">18+</div>
 <h2 class="age-modal-title">Подтверждение возраста</h2>
 <p class="age-modal-text">Контакты доступны только совершеннолетним посетителям. Подтвердите, что вам уже исполнилось 18 лет.</p>
-<label class="age-modal-checkbox">Мне исполнилось 18 лет, и я подтверждаю переход к консультации</label>
+<label class="age-modal-checkbox">
+<input id="ageConfirmCheckbox" type="checkbox"/>
+<span>Мне исполнилось 18 лет, и я согласен(на) с условиями использования контактов</span>
+</label>
 <div class="age-modal-actions">
 <button class="btn age-confirm-btn" disabled="" id="ageConfirmBtn" type="button">Подтвердить возраст и открыть контакты</button>
 <button class="btn age-cancel-btn" onclick="closeAgeModal()" type="button">Закрыть</button>
@@ -746,7 +753,10 @@ p{color:var(--text-muted)}
 </div>
 <div class="intent-step">
 <label>Подтвердите готовность к диалогу</label>
-<label class="intent-checkbox"> </label>
+<label class="intent-checkbox">
+<input id="intentReadyCheckbox" type="checkbox"/>
+<span>Я действительно готов(а) перейти в чат и подробно описать запрос</span>
+</label>
 </div>
 <div class="intent-timer" id="intentTimerHint"></div>
 <div class="contact-intent-actions">
