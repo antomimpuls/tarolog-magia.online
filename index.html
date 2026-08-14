@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&amp;family=Lora:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <script>
 const SITE_SETTINGS = {
-  'phoneNumber': '+79185855731',
-  'psychicName': 'Алёна Владимировна',
+  'phoneNumber': '+79675802551',
+  'psychicName': 'Мелисса',
   'city': 'Москва (район Таганский)',
   'address': 'г. Москва, ул. Верхняя Радищевская, д. 15/2, кабинет 12',
   'enableRedirect': false,
@@ -22,14 +22,14 @@ const SITE_SETTINGS = {
   'siteUrl': 'https://tarolog-magia.online/',
   'whatsappMessage': 'Здравствуйте, хочу обратиться к вам за помощью.',
   'telegramEnabled': 1,
-  'telegramNickname': 'Dana17_magiya',
+  'telegramNickname': 'gadanie0088',
   'yandexMetrikaId': '110931757',
   'psychicImageURL': 'https://raw.githubusercontent.com/antomimpuls/tarolog-magia.online/main/gHuuII1o_RQ.jpg',
   'workingHours': 'ежедневно 08:00-22:00',
   'responseTime': '5 минут',
   'metrikaMessengerVisible': false
 };
-const PSYCHIC_NAME=SITE_SETTINGS.psychicName||'';
+const PSYCHIC_NAME=SITE_SETTINGS.psychicName||'Мелисса';
 const PHONE_DIGITS=(SITE_SETTINGS.phoneNumber||'').replace(/\D/g,'');
 const WHATSAPP_MESSAGE=PSYCHIC_NAME ? `Здравствуйте, ${PSYCHIC_NAME}! Хочу обратиться к вам за помощью.` : 'Здравствуйте, хочу обратиться к вам за помощью.';
 const ENCODED_MESSAGE=encodeURIComponent(WHATSAPP_MESSAGE);
@@ -1043,7 +1043,7 @@ window.goToSlide = goToSlide; function updateSlider(){ if (!sliderState) return;
 } function initDynamicContent(){ setupReveal(); setImagesAndTexts(); startOnlineCounter();
 } function setupReveal(){ const revealTargets = document.querySelectorAll('.card,.testimonial,.hero-img'); revealTargets.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.5s ease,transform 0.5s ease'; }); const heroImg = document.querySelector('.hero-img'); if (heroImg) { heroImg.style.opacity = '0'; heroImg.style.transform = 'translateY(30px)'; heroImg.style.transition = 'opacity 0.8s ease,transform 0.8s ease'; setTimeout(() => { heroImg.style.opacity = '1'; heroImg.style.transform = 'translateY(0)'; }, 300); } const animate = () => { revealTargets.forEach(el => { const top = el.getBoundingClientRect().top; if (top < window.innerHeight - 100) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; } }); }; setTimeout(animate, 500); window.addEventListener('scroll', animate);
 } function replaceNamePlaceholders(name){ if (!name) return; const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null); const targets = []; while (walker.nextNode()) { targets.push(walker.currentNode); } targets.forEach(node => { if (!node.nodeValue || node.nodeValue.indexOf('{{NAME}}') === -1) return; const parent = node.parentElement || node.parentNode; if (parent && parent.closest('.testimonial')) return; node.nodeValue = node.nodeValue.replace(/{{NAME}}/g, name); });
-} function setImagesAndTexts(){ const psychicName = SETTINGS.psychicName || 'Мастер Алёна'; replaceNamePlaceholders(psychicName); const ogDescription = document.querySelector('meta[property="og:description"]'); if (ogDescription && ogDescription.content && psychicName) { ogDescription.content = ogDescription.content.replace(/{{NAME}}/g, psychicName); } const heroName = document.getElementById('heroName'); if (heroName) { const titleEl = heroName.querySelector('.psychic-name-title'); if (titleEl) titleEl.textContent = psychicName; } const footerName = document.getElementById('footerName'); if (footerName && psychicName) { footerName.textContent = `${footerPrefix} ${psychicName}`; } const legalEntity = document.getElementById('legalEntity'); if (legalEntity && psychicName) { legalEntity.textContent = `ИП ${psychicName}`; } updateContactLinks(); const psychicImg = document.getElementById('psychicImage'); if (psychicImg && SETTINGS.psychicImageURL) { psychicImg.src = SETTINGS.psychicImageURL; } setTimeout(() => { if (psychicName) { document.querySelectorAll('.testimonial p').forEach(p => { const text = p.innerHTML; const randomVariant = nameVariants[Math.floor(Math.random() * nameVariants.length)]; p.innerHTML = text.replace(/{{NAME}}/g, randomVariant.replace(/{{NAME}}/g, psychicName)); }); } }, 100);
+} function setImagesAndTexts(){ const psychicName = SETTINGS.psychicName || 'Мелисса'; replaceNamePlaceholders(psychicName); const ogDescription = document.querySelector('meta[property="og:description"]'); if (ogDescription && ogDescription.content && psychicName) { ogDescription.content = ogDescription.content.replace(/{{NAME}}/g, psychicName); } const heroName = document.getElementById('heroName'); if (heroName) { const titleEl = heroName.querySelector('.psychic-name-title'); if (titleEl) titleEl.textContent = psychicName; } const footerName = document.getElementById('footerName'); if (footerName && psychicName) { footerName.textContent = `${footerPrefix} ${psychicName}`; } const legalEntity = document.getElementById('legalEntity'); if (legalEntity && psychicName) { legalEntity.textContent = `ИП ${psychicName}`; } updateContactLinks(); const psychicImg = document.getElementById('psychicImage'); if (psychicImg && SETTINGS.psychicImageURL) { psychicImg.src = SETTINGS.psychicImageURL; } setTimeout(() => { if (psychicName) { document.querySelectorAll('.testimonial p').forEach(p => { const text = p.innerHTML; const randomVariant = nameVariants[Math.floor(Math.random() * nameVariants.length)]; p.innerHTML = text.replace(/{{NAME}}/g, randomVariant.replace(/{{NAME}}/g, psychicName)); }); } }, 100);
 } function startOnlineCounter(){ updateOnlineCount(); setInterval(updateOnlineCount, 45000);
 } function updateOnlineCount(){ const count = Math.floor(Math.random() * 4) + 1; const onlineCount = document.getElementById('onlineCount'); if (onlineCount) { const word = onlineWords[count - 1] || onlineWords[onlineWords.length - 1]; onlineCount.textContent = count; if (onlineCount.parentElement) { onlineCount.parentElement.innerHTML = `${onlineIntro}: <strong>${count}</strong> ${word}`; } }
 } function setIntentConfirmState({disabled, text, href} = {}){
